@@ -55,6 +55,12 @@ h1{
     border-color:#10CE88;
     color:#10CE88;
   }
+  &.has-error {
+    &:focus, &:focus + .fa{
+      border-color:#a94442;
+      color:#a94442;
+    }
+  }
   +span {
     position: absolute;
     right: 0;

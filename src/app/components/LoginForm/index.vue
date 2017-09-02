@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="form-group log-status">
-                <input type="password" class="form-control" placeholder="Password" name="password" required>
+                <input type="password" class="form-control has-error" placeholder="Password" name="password" required>
                 <span class="glyphicon glyphicon-lock"></span>
                 <div class="input-error-message">
                     Не правильный пароль<br>
