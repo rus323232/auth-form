@@ -1,26 +1,100 @@
-body {
-  background: yellow;
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+h1{
+  color:#ccc;
+  text-align:center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 40px;
+  margin-bottom: 40px;
 }
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.login-form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height:430px;
+  width:350px;
+  padding:40px 30px;
+  margin-left: -175px;
+  margin-top: -215px;
+  background:#eee;
+  border-radius:27px;
 }
-h1, h2 {
-  font-weight: normal;
+.form-group{
+  position: relative;
+  margin-bottom:15px;
+
+  .input-error-message {
+    position: absolute;
+    width: 270px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 3;
+    background-color: #f2dede;
+    &::after {
+      position: absolute;
+      top: -26px;
+      left: 7px;
+      border: 15px solid transparent;
+      border-bottom: 28px solid #f2dede;
+      content: '';
+    }
+  }
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.form-control{
+  position: relative;
+  width:100%;
+  height:50px;
+  border:none;
+  padding:5px 45px 5px 15px;
+  background:#fff;
+  color:#666;
+  border:2px solid #ddd;
+  border-radius:4px;
+  &:focus, &:focus + .fa{
+    border-color:#10CE88;
+    color:#10CE88;
+  }
+  +span {
+    position: absolute;
+    right: 0;
+    color: #cccccc;
+    top: 50%;
+    right: 10px;
+    margin-top: -12px;
+    font-size: 22px;
+  }
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.log-btn{
+  font-family: 'Press Start 2P', cursive;
+  background:#0AC986;
+  dispaly:inline-block;
+  width:100%;
+  font-size:16px;
+  height:50px;
+  color:#fff;
+  text-decoration:none;
+  border:none;
+  border-radius: 4px;
 }
-a {
-  color: #42b983;
+
+.link{
+  text-decoration:none;
+  color:#C6C6C6;
+  float:right;
+  font-size:12px;
+  margin-bottom:15px;
+  &:hover{
+    text-decoration: underline;
+    color:#8C918F;
+  }
+}
+
+.alerts-block {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 300px;
+  z-index: 1000;
 }

@@ -1,6 +1,9 @@
 <template>
     <div id="application">
-        <loginform-component></loginform-component>
+        <div class="wrapper">
+            <div class="blur"></div>
+            <loginform-component></loginform-component>
+        </div>
     </div>
 </template>
 
