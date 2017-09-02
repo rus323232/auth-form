@@ -1,8 +1,8 @@
+import LoginFormComponent from '../LoginForm/index.vue';
+
 export default {
     name: 'app',
-    data () {
-        return {
-            msg: 'Welcome to Your Vue.js App'
-        }
+    components: {
+        'loginform-component': LoginFormComponent,
     }
 }

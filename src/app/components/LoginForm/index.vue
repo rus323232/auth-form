@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div class="loginform-component">
         <h1>\{{ msg }}</h1>
         <h2>Essential Links</h2>
         <ul>
@@ -19,5 +19,4 @@
 </template>
 
 <script lang="js" src="./script.js"></script>
-<style lang="scss" src="./global-styles.scss"></style>
 <style scope lang="scss" src="./styles.scss"></style>

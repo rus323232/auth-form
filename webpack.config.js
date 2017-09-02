@@ -15,14 +15,26 @@ module.exports = {
         filename: '[name].[hash].js'
     },
     resolve: {
-        extensions: ['.js']
+        extensions: ['.js'],
+        alias: {
+
+        }
     },
 
     module: {
         rules: [
             {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
+            {
                 test: /\.html$/,
                 loader: 'html-loader'
+            },
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/
             },
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
@@ -63,16 +75,16 @@ module.exports = {
 
         new webpack.NoEmitOnErrorsPlugin(),
 
-        new webpack.optimize.UglifyJsPlugin({
-            mangle: {
-                keep_fnames: true
-            }
-        }),
-
         new webpack.LoaderOptionsPlugin({
             htmlLoader: {
                 minimize: false
             }
+        }),
+
+        new webpack.ProvidePlugin({
+            $: "jquery/dist/jquery.min.js",
+            jQuery: "jquery/dist/jquery.min.js",
+            "window.jQuery": "jquery/dist/jquery.min.js"
         })
     ]
 };
