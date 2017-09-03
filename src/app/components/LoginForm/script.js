@@ -69,7 +69,7 @@ export default {
                 password: this.password
             };
             this.alerts = [];
-            let HttpRequest = $.post(this.url, data)
+            $.post(this.url, data)
                 .done( (data) => {
                     this.alerts.push({
                         type: 'success',
