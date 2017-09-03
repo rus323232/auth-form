@@ -1,5 +1,11 @@
 export default {
     name: 'loginform-component',
+    props: {
+        url : {
+            type: String,
+            required: true
+        }
+    },
     data () {
         return {
             email: '',
@@ -63,12 +69,14 @@ export default {
                 password: this.password
             };
             this.alerts = [];
-            let HttpRequest = $.post("/src/fake-backend/fake-server.json", data)
-                .done( () => {
+            let HttpRequest = $.post(this.url, data)
+                .done( (data) => {
                     this.alerts.push({
                         type: 'success',
                         message: 'Успешный запрос'
                     });
+
+                    alert( `Ответ сервера: ${data}` );
                 })
                 .fail(er => {
                     this.alerts.push({

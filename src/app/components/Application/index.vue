@@ -2,7 +2,7 @@
     <div id="application">
         <div class="wrapper">
             <div class="blur"></div>
-            <loginform-component></loginform-component>
+            <loginform-component url="http://localhost:8082/"></loginform-component>
         </div>
     </div>
 </template>

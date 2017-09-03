@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server",
+    "fakeServer": "node fake-backend/fake-server.js",
     "build": "rimraf dist && webpack"
   },
   "devDependencies": {
