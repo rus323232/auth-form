@@ -16,16 +16,21 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js'],
-        alias: {
-
-        }
     },
 
     module: {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: {
+                    loaders: {
+                        sass: ExtractTextPlugin.extract({
+                            use: ['css-loader?sourceMap', 'sass-loader'],
+                            fallback: 'vue-style-loader'
+                        })
+                    }
+                }
             },
             {
                 test: /\.html$/,
@@ -41,16 +46,10 @@ module.exports = {
                 loader: 'file-loader?name=assets/[name].[hash].[ext]'
             },
             {
-                test: /\.scss$/,
-                include: path.resolve('src', 'app'),
-                use: ['css-to-string-loader', 'css-loader', 'sass-loader']
-            },
-            {
-                test: /\.scss$/,
-                include: path.resolve('src', 'assets', 'sass'),
-                use: ExtractTextPlugin.extract({
-                    fallbackLoader: 'style-loader',
-                    use: 'css-loader?sourceMap'
+                test:/\.scss$/,
+                loader: ExtractTextPlugin.extract({
+                    use: ['css-loader?sourceMap', 'sass-loader'],
+                    fallback: 'style-loader'
                 })
             }
         ]
